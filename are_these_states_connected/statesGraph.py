@@ -25,9 +25,6 @@ input_states_string = str(input(
 
 input_states_list = input_states_string.split(",")
 
-for x in input_states_list:
-    if x not in state_set:
-        print("Not a valid state abbreviation: " + x)
-        print("Exiting, run the script again.")
-        SystemExit()
+input_states_list = filter(lambda s: s not in state_set, input_states_list)
 
+print(input_states_list)
